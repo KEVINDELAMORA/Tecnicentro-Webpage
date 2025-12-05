@@ -25,7 +25,7 @@ export default function Location() {
                                         (Cerca del Mercado)
                                     </p>
                                     <a
-                                        href="https://maps.google.com/?q=Tecnicentro+de+Colima"
+                                        href="https://maps.app.goo.gl/6dTQtKhPbLYH8kGcA"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block mt-2 text-brand-red font-bold hover:text-white transition-colors uppercase text-sm"

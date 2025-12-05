@@ -4,7 +4,7 @@ export default function Promotions() {
     return (
         <section className="py-20 bg-brand-red relative overflow-hidden">
             {/* Background Texture */}
-            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+            <div className="absolute inset-0 opacity-20 bg-[url('/images/promo-bg.png')] bg-cover bg-center mix-blend-multiply"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="bg-brand-dark p-8 md:p-12 rounded-sm shadow-2xl border-l-8 border-brand-yellow flex flex-col md:flex-row items-center gap-8 md:gap-16">

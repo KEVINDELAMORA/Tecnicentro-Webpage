@@ -3,7 +3,7 @@ export default function Hero() {
         <div className="relative bg-brand-dark overflow-hidden">
             {/* Background Pattern/Image Overlay */}
             <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center mix-blend-overlay"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent"></div>
             </div>
 
