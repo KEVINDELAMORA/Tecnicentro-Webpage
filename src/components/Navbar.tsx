@@ -1,36 +1,111 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { Phone, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { href: '#servicios', label: 'Servicios' },
+        { href: '#ubicacion', label: 'Ubicación' },
+    ];
+
     return (
-        <nav className="bg-brand-dark border-b border-brand-gray/20 sticky top-0 z-50">
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+                ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100'
+                : 'bg-white border-b border-gray-200 shadow-sm'
+            }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-20 items-center">
+                <div className="flex justify-between h-20 md:h-24 items-center">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="flex flex-col">
-                            <span className="text-2xl font-black text-white tracking-tighter uppercase italic">
-                                TECNICENTRO
-                            </span>
-                            <span className="text-xs font-bold text-brand-red tracking-widest uppercase">
-                                DE COLIMA
-                            </span>
+                        <Link href="/" className="flex items-center group">
+                            <img
+                                src="/images/logo_new.png"
+                                alt="Tecnicentro de Colima"
+                                className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${scrolled ? 'h-16 md:h-20' : 'h-20 md:h-24'
+                                    }`}
+                            />
                         </Link>
                     </div>
 
-                    {/* Contact Button */}
-                    <div className="flex items-center">
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="text-brand-dark hover:text-brand-red font-bold uppercase tracking-wider text-sm transition-colors relative group"
+                            >
+                                {link.label}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Contact Button & Mobile Menu */}
+                    <div className="flex items-center gap-4">
+                        {/* Desktop CTA */}
                         <a
                             href="https://wa.me/523123146950"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-brand-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-sm uppercase tracking-wider transition-colors duration-200 flex items-center gap-2"
+                            className="hidden sm:flex bg-brand-red hover:bg-red-600 text-white font-bold py-3 px-6 rounded-sm uppercase tracking-wider transition-all duration-300 btn-lift items-center gap-2 shadow-md"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span className="hidden sm:inline">Contactar</span>
+                            <Phone className="w-5 h-5" />
+                            <span>Contactar</span>
                         </a>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden p-2 text-brand-dark hover:text-brand-red transition-colors"
+                            aria-label="Toggle menu"
+                        >
+                            {mobileMenuOpen ? (
+                                <X className="w-7 h-7" />
+                            ) : (
+                                <Menu className="w-7 h-7" />
+                            )}
+                        </button>
                     </div>
+                </div>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`md:hidden overflow-hidden transition-all duration-300 ${mobileMenuOpen ? 'max-h-80' : 'max-h-0'
+                }`}>
+                <div className="bg-white border-t border-gray-100 px-4 py-6 space-y-4">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block text-brand-dark hover:text-brand-red font-bold uppercase tracking-wider text-lg py-2 transition-colors"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+                    <a
+                        href="https://wa.me/523123146950"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex bg-brand-red hover:bg-red-600 text-white font-bold py-4 px-6 rounded-sm uppercase tracking-wider transition-all items-center justify-center gap-2 shadow-md mt-4"
+                    >
+                        <Phone className="w-5 h-5" />
+                        <span>Contactar</span>
+                    </a>
                 </div>
             </div>
         </nav>
