@@ -19,7 +19,7 @@ const services = [
     {
         title: "Reparación y Mantenimiento",
         description: "Taller especializado en reparación de herramientas eléctricas, compresores y maquinaria ligera. Diagnóstico y refacciones.",
-        image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800&auto=format&fit=crop",
+        image: "/images/reparaciones.jpg",
         icon: Settings,
     },
     {

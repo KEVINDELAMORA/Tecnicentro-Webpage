@@ -7,7 +7,7 @@ export default function Promotions() {
         <section className="py-24 bg-gradient-to-br from-brand-red via-red-600 to-brand-red relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1920')] bg-cover bg-center mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/30"></div>
             </div>
 
             {/* Decorative elements */}
@@ -55,7 +55,7 @@ export default function Promotions() {
                     <div className="w-full lg:w-2/5 relative">
                         <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 relative group">
                             <img
-                                src="https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=800&auto=format&fit=crop"
+                                src="/images/promo-ingco.jpg"
                                 alt="Promociones Tecnicentro"
                                 className="w-full h-full object-cover"
                             />
