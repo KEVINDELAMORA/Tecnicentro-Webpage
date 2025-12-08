@@ -7,13 +7,13 @@ const services = [
     {
         title: "Afilado Industrial",
         description: "Servicio profesional de afilado para discos de sierra, sierra cintas y cuchillas. Recuperamos el filo original para cortes precisos.",
-        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop",
+        image: "/images/afilado.jpg",
         icon: Scissors,
     },
     {
         title: "Venta de Maquinaria",
         description: "Equipos robustos para construcción, agricultura y carpintería. Distribuidores de las mejores marcas del mercado.",
-        image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=800&auto=format&fit=crop",
+        image: "/images/venta-maquinaria.jpg",
         icon: ShoppingBag,
     },
     {
@@ -25,7 +25,7 @@ const services = [
     {
         title: "Sierra Cintas a Medida",
         description: "Fabricación y soldadura de sierra cintas al tamaño exacto que necesitas. Calidad y resistencia garantizada.",
-        image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop",
+        image: "/images/sierra-cintas.jpg",
         icon: Wrench,
     },
 ];

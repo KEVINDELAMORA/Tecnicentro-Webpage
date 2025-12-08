@@ -33,8 +33,8 @@ const contactInfo = [
         title: "Horario",
         content: (
             <>
-                Lunes a Viernes: 9:00 AM - 6:00 PM<br />
-                Sábado: 9:00 AM - 2:00 PM<br />
+                Lunes a Viernes: 9:00 AM - 2:00 PM y 4:00 PM - 6:00 PM<br />
+                Sábado: 9:00 AM - 1:00 PM<br />
                 <span className="text-brand-red font-semibold">Domingo: Cerrado</span>
             </>
         )
@@ -83,7 +83,7 @@ export default function Location() {
                         {/* Storefront Image */}
                         <div className="mb-10 rounded-xl overflow-hidden shadow-xl border-2 border-gray-100 group">
                             <img
-                                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop"
+                                src="/images/fachada.jpg"
                                 alt="Fachada Tecnicentro de Colima"
                                 className="w-full h-auto max-h-[400px] object-cover bg-gray-100 transform group-hover:scale-105 transition-transform duration-700"
                             />

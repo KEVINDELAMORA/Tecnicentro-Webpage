@@ -5,22 +5,28 @@ import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 const heroSlides = [
     {
-        image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=1920&auto=format&fit=crop",
-        title: "Potencia y",
-        highlight: "Precisión",
-        description: "Soluciones robustas para carpinteros y constructores."
+        image: "/images/hero-disco.jpg",
+        title: "Discos de",
+        highlight: "Corte Profesional",
+        description: "Afilado y venta de discos."
     },
     {
-        image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1920&auto=format&fit=crop",
-        title: "Reparación",
-        highlight: "Especializada",
-        description: "Servicio técnico confiable para tus herramientas."
+        image: "/images/hero-equipo.jpg",
+        title: "Equipo y",
+        highlight: "Refacciones",
+        description: "Todo para tu maquinaria."
     },
     {
-        image: "https://images.unsplash.com/photo-1581166397657-202f6e463f01?q=80&w=1920&auto=format&fit=crop",
-        title: "Maquinaria",
-        highlight: "Industrial",
-        description: "Venta de equipos de las mejores marcas."
+        image: "/images/hero-campo.jpg",
+        title: "Herramientas",
+        highlight: "Para el Campo",
+        description: "Potencia donde la necesitas."
+    },
+    {
+        image: "/images/hero-discos.jpg",
+        title: "Variedad en",
+        highlight: "Marcas y Modelos",
+        description: "Las mejores marcas disponibles."
     }
 ];
 
@@ -58,12 +64,15 @@ export default function Hero() {
             {heroSlides.map((slide, index) => (
                 <div
                     key={index}
-                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                    className={`absolute inset-0 transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
                         }`}
                 >
                     <div
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url('${slide.image}')` }}
+                        style={{
+                            backgroundImage: `url('${slide.image}')`,
+                            backgroundPosition: 'center 30%'
+                        }}
                     ></div>
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"></div>
