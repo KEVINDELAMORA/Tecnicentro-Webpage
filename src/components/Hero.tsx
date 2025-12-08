@@ -8,25 +8,29 @@ const heroSlides = [
         image: "/images/hero-disco.jpg",
         title: "Discos de",
         highlight: "Corte Profesional",
-        description: "Afilado y venta de discos."
+        description: "Afilado y venta de discos.",
+        bgPosition: "center 30%"
     },
     {
         image: "/images/hero-equipo.jpg",
         title: "Equipo y",
         highlight: "Refacciones",
-        description: "Todo para tu maquinaria."
+        description: "Todo para tu maquinaria.",
+        bgPosition: "center 75%"
     },
     {
         image: "/images/hero-campo.jpg",
         title: "Herramientas",
         highlight: "Para el Campo",
-        description: "Potencia donde la necesitas."
+        description: "Potencia donde la necesitas.",
+        bgPosition: "center 70%"
     },
     {
         image: "/images/hero-discos.jpg",
         title: "Variedad en",
         highlight: "Marcas y Modelos",
-        description: "Las mejores marcas disponibles."
+        description: "Las mejores marcas disponibles.",
+        bgPosition: "center 30%"
     }
 ];
 
@@ -71,7 +75,7 @@ export default function Hero() {
                         className="absolute inset-0 bg-cover bg-center"
                         style={{
                             backgroundImage: `url('${slide.image}')`,
-                            backgroundPosition: 'center 30%'
+                            backgroundPosition: slide.bgPosition
                         }}
                     ></div>
                     {/* Gradient overlay */}
